@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes,  Route } from 'react-router-dom'
+import Loading from 'components/Loading'
 
 // 定义数组每一项的接口
 interface IRoute {
@@ -26,7 +27,7 @@ const BaseRouter = (): any => {
   return (
     <BrowserRouter>
     {/* 路由加载需要等待动画 */}
-      <Suspense fallback={<div>loading....</div>}>
+      <Suspense fallback={<Loading></Loading>}>
         <Routes>
           {
             router_arr.map((item, index) => {
