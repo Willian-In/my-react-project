@@ -1,14 +1,16 @@
 import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes,  Route } from 'react-router-dom'
-import App from 'App'
-// import Login from 'Login'
-// import Register from 'Register'
-// import List from 'pages/List'
 
+// 定义数组每一项的接口
+interface IRoute {
+  path: string;
+  component: React.FC; // react的组件
+  children?: IRoute[];
+}
 
 // 组件懒加载
-const router_arr = [
-  {path: '/', component: App, children: [
+const router_arr: IRoute[] = [
+  {path: '/', component: lazy(() => import("App")), children: [
     // 引入子页面
     {path: '/list', component: lazy(() => import("pages/List"))},
   ]},
