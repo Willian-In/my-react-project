@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
-import { Button } from 'antd'
+import { Outlet } from 'react-router-dom'
+import 'App.scss'
 
 export default class App extends Component {
   render() {
     return (
-      <h2>123<Button>这是一个按钮</Button></h2>
+      <div>
+        <h2>APP组件</h2>
+        <Outlet />
+      </div>
     )
   }
 }
