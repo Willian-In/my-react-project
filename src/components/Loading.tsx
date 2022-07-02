@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { LoadingOutlined } from '@ant-design/icons';
-import './scss/Loading.scss'
+import './scss/loading.scss'
 
 export default class Loading extends Component {
   render() {
